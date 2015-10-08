@@ -6,6 +6,14 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{lmodern}
 
+\usepackage{pdflscape}
+
+\usepackage{amsmath,amssymb,amsthm}
+
+\usepackage{verbatim}
+
+% \newcommand{\nothtml}{\comment}
+
 \usepackage{listings}
 \usepackage[hyperfootnotes=false]{hyperref}
 \usepackage{exercise}
@@ -16,11 +24,11 @@
 
 \usepackage[toc,page]{appendix}
 
-\usepackage[secthm,mdthm]{evan}
-
 \usepackage{answers}
 
-\lhead{Samuel Hsiang, Alexander Wei}
+\usepackage[secthm,mdthm]{evan}
+
+\lhead{Hsiang, Wei, Liu}
 
 \usepackage{graphicx}
 
@@ -34,6 +42,8 @@
 \definecolor{mywhite}{RGB}{255,255,255}
 
 \usepackage{tikz}
+
+\usepackage{htlatexsupport}
 
 \usetikzlibrary{calc,shapes.multipart,chains,arrows,positioning}
 
@@ -78,6 +88,12 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+\makeatletter
+\@ifpackageloaded{tex4ht}
+{
+	\newcommand{\mylstlisting}{\verbatim}
+}
+{
 \lstnewenvironment{mylstlisting}[1][]%
   {\noindent\minipage{\linewidth}\medskip 
    \lstset{
@@ -100,6 +116,8 @@
    basicstyle=\ttfamily\footnotesize,
    frame=single,#1}}
   {\endminipage}
+}
+\makeatother
 
 \raggedbottom
 
@@ -109,7 +127,7 @@
 
 \renewcommand{\arraystretch}{1.5}
 
-% \includeonly{chapters/standard_ds}
+% \includeonly{chapters/math}
 
 \begin{document}
 
